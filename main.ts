@@ -712,11 +712,9 @@ chosenBottoms.setPosition(58, 71)
 chosenTop.setPosition(58, 12)
 for (let index2 = 0; index2 <= randint(0, 4); index2++) {
     chosenTop.setImage(tops[index2])
-    pause(200)
 }
 for (let index = 0; index <= randint(0, 4); index++) {
     chosenBottoms.setImage(bottoms[index])
-    pause(200)
 }
 for (let index = 0; index <= 4; index++) {
     if (tops[index] == bottoms[index2]) {
