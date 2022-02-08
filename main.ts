@@ -1,22 +1,21 @@
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    chosenBottoms.setPosition(34, 60)
-    for (let index = 0; index < 4; index++) {
-        chosenBottoms.setImage(bottoms._pickRandom())
-        pause(100)
+    chosenBottoms.setPosition(76, 91)
+    for (let index = 0; index <= 4; index++) {
+        chosenBottoms.setImage(bottoms[index])
+        pause(200)
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     chosenTop.setPosition(77, 34)
-    for (let index = 0; index < 4; index++) {
-        chosenTop.setImage(tops._pickRandom())
-        pause(100)
+    for (let index = 0; index <= 4; index++) {
+        chosenTop.setImage(tops[index])
+        pause(200)
     }
 })
 let chosenBottoms: Sprite = null
 let chosenTop: Sprite = null
 let bottoms: Image[] = []
 let tops: Image[] = []
-game.splash("Time to pick an outfit!")
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     fccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccf
@@ -139,6 +138,7 @@ scene.setBackgroundImage(img`
     fccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccf
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `)
+game.splash("Time to pick an outfit!")
 tops = [
 img`
     ..................................................
@@ -529,3 +529,16 @@ chosenBottoms = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+if (tops[0] && bottoms[0]) {
+    game.splash("ITS A SET!!")
+} else if (tops[1] && bottoms[1]) {
+    game.splash("ITS A SET!!")
+} else if (tops[2] && bottoms[2]) {
+    game.splash("ITS A SET!!")
+} else if (tops[3] && bottoms[3]) {
+    game.splash("ITS A SET!!")
+} else if (tops[4] && bottoms[4]) {
+    game.splash("ITS A SET!!")
+} else {
+    game.splash("MIS MATCH")
+}
