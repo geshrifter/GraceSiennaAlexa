@@ -1,5 +1,5 @@
 {
-    "name": "ap",
+    "name": "AP Project - Outfit Generator",
     "description": "",
     "dependencies": {
         "device": "*"
