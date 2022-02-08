@@ -3,13 +3,24 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         chosenTop.setImage(tops[index2])
         pause(200)
     }
+    for (let index = 0; index <= 4; index++) {
+        if (tops[index] == bottoms[index2]) {
+            game.splash("set")
+        }
+    }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let index = 0; index <= randint(0, 4); index++) {
         chosenBottoms.setImage(bottoms[index])
         pause(200)
     }
+    for (let index = 0; index <= 4; index++) {
+        if (tops[index] == bottoms[index2]) {
+            game.splash("set")
+        }
+    }
 })
+let index2 = 0
 let chosenBottoms: Sprite = null
 let chosenTop: Sprite = null
 let bottoms: Image[] = []
@@ -706,4 +717,9 @@ for (let index2 = 0; index2 <= randint(0, 4); index2++) {
 for (let index = 0; index <= randint(0, 4); index++) {
     chosenBottoms.setImage(bottoms[index])
     pause(200)
+}
+for (let index = 0; index <= 4; index++) {
+    if (tops[index] == bottoms[index2]) {
+        game.splash("set")
+    }
 }
