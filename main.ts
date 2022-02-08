@@ -1,39 +1,13 @@
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    for (let index = 0; index <= randint(0, 4); index++) {
-        chosenBottoms.setImage(bottoms[index])
-        pause(200)
-    }
-    if (tops[0] && bottoms[0]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[1] && bottoms[1]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[2] && bottoms[2]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[3] && bottoms[3]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[4] && bottoms[4]) {
-        game.splash("ITS A SET!!")
-    } else {
-        game.splash("MIS MATCH")
-    }
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let index2 = 0; index2 <= randint(0, 4); index2++) {
         chosenTop.setImage(tops[index2])
         pause(200)
     }
-    if (tops[0] && bottoms[0]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[1] && bottoms[1]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[2] && bottoms[2]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[3] && bottoms[3]) {
-        game.splash("ITS A SET!!")
-    } else if (tops[4] && bottoms[4]) {
-        game.splash("ITS A SET!!")
-    } else {
-        game.splash("MIS MATCH")
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    for (let index = 0; index <= randint(0, 4); index++) {
+        chosenBottoms.setImage(bottoms[index])
+        pause(200)
     }
 })
 let chosenBottoms: Sprite = null
@@ -724,7 +698,7 @@ chosenBottoms = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
 chosenBottoms.setPosition(58, 71)
-chosenTop.setPosition(61, 20)
+chosenTop.setPosition(58, 12)
 for (let index2 = 0; index2 <= randint(0, 4); index2++) {
     chosenTop.setImage(tops[index2])
     pause(200)
