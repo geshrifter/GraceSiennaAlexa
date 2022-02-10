@@ -1,10 +1,12 @@
 function askUser (text: string) {
-    game.splash("ITS A SET!!" + "do you like this outfit? ")
+    game.splash("ITS A SET!!" + " Would you like to choose this outfit?")
     userOpinion = game.askForString(text, 1)
     if (userOpinion == "y") {
-        game.splash("YAY! im glad u like your outfit!")
+        game.splash("YAY! I'm glad you like your outfit!")
         effects.confetti.startScreenEffect()
         music.magicWand.play()
+    } else if (userOpinion == "n") {
+        game.splash("No problem.. keep searching!")
     }
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -12,7 +14,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     randomNumberA = randint(0, 4)
     chosenTop.setImage(tops[randomNumberA])
     if (randomNumberA == randomNumberB) {
-        askUser("answer 'y' for yes and 'n' for no")
+        askUser("Answer 'y' for yes and 'n' for no.")
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -20,7 +22,7 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     randomNumberB = randint(0, 4)
     chosenBottoms.setImage(bottoms[randomNumberB])
     if (randomNumberA == randomNumberB) {
-        askUser("answer 'y' for yes and 'n' for no")
+        askUser("Answer 'y' for yes and 'n' for no.")
     }
 })
 let _set = false
@@ -154,7 +156,8 @@ scene.setBackgroundImage(img`
     fccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccf
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `)
-game.splash("Time to pick an outfit!")
+game.splash("Welcome to your Outfit Chooser!", "Time to pick an outfit!")
+game.splash("Use the left and right buttons to scroll through items!")
 tops = [
 img`
     ..................................................
@@ -734,5 +737,5 @@ for (let index3 = 0; index3 <= randint(0, 4); index3++) {
     randomNumberB = index3
 }
 if (randomNumberA == randomNumberB) {
-    askUser("answer 'y' for yes and 'n' for no")
+    askUser("Answer 'y' for yes and 'n' for no.")
 }
