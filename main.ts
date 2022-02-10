@@ -28,6 +28,7 @@ let chosenBottoms: Sprite = null
 let chosenTop: Sprite = null
 let bottoms: Image[] = []
 let tops: Image[] = []
+// This line serves to set the scene and create a background for the game.
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     fccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccf
