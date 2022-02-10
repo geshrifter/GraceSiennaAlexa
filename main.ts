@@ -1,17 +1,27 @@
+function askUser (text: string) {
+    if (true) {
+    	
+    }
+}
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    _set = false
     randomNumberA = randint(0, 4)
     chosenTop.setImage(tops[randomNumberA])
     if (randomNumberA == randomNumberB) {
         game.splash("ITS A SET!")
+        _set = true
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    _set = false
     randomNumberB = randint(0, 4)
     chosenBottoms.setImage(bottoms[randomNumberB])
     if (randomNumberA == randomNumberB) {
         game.splash("ITS A SET!")
+        _set = true
     }
 })
+let _set = false
 let randomNumberB = 0
 let randomNumberA = 0
 let chosenBottoms: Sprite = null
@@ -711,9 +721,15 @@ for (let index = 0; index <= 4; index++) {
     chosenBottoms.setImage(bottoms[index])
     pause(100)
 }
-for (let index2 = 0; index2 <= randint(0, 4); index2++) {
-    chosenTop.setImage(tops[index2])
+for (let index22 = 0; index22 <= randint(0, 4); index22++) {
+    chosenTop.setImage(tops[index22])
+    randomNumberA = index22
 }
-for (let index = 0; index <= randint(0, 4); index++) {
-    chosenBottoms.setImage(bottoms[index])
+for (let index3 = 0; index3 <= randint(0, 4); index3++) {
+    chosenBottoms.setImage(bottoms[index3])
+    randomNumberB = index3
+}
+if (randomNumberA == randomNumberB) {
+    game.splash("ITS A SET!")
+    _set = true
 }
