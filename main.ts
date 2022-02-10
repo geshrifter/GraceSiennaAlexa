@@ -1,6 +1,10 @@
 function askUser (text: string) {
-    if (true) {
-    	
+    game.splash("ITS A SET!!" + "do you like this outfit? ")
+    userOpinion = game.askForString(text, 1)
+    if (userOpinion == "y") {
+        game.splash("YAY! im glad u like your outfit!")
+        effects.confetti.startScreenEffect()
+        music.magicWand.play()
     }
 }
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -8,8 +12,7 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     randomNumberA = randint(0, 4)
     chosenTop.setImage(tops[randomNumberA])
     if (randomNumberA == randomNumberB) {
-        game.splash("ITS A SET!")
-        _set = true
+        askUser("answer 'y' for yes and 'n' for no")
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -17,11 +20,11 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     randomNumberB = randint(0, 4)
     chosenBottoms.setImage(bottoms[randomNumberB])
     if (randomNumberA == randomNumberB) {
-        game.splash("ITS A SET!")
-        _set = true
+        askUser("answer 'y' for yes and 'n' for no")
     }
 })
 let _set = false
+let userOpinion = ""
 let randomNumberB = 0
 let randomNumberA = 0
 let chosenBottoms: Sprite = null
@@ -730,6 +733,5 @@ for (let index3 = 0; index3 <= randint(0, 4); index3++) {
     randomNumberB = index3
 }
 if (randomNumberA == randomNumberB) {
-    game.splash("ITS A SET!")
-    _set = true
+    askUser("answer 'y' for yes and 'n' for no")
 }
