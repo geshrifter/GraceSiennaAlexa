@@ -28,6 +28,7 @@ let chosenBottoms: Sprite = null
 let chosenTop: Sprite = null
 let bottoms: Image[] = []
 let tops: Image[] = []
+// This sets the scen and provides a background
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     fccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccf
